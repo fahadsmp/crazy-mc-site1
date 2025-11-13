@@ -1,0 +1,196 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CRAZY MC — Play.Crazy-MC.Fun</title>
+  <meta name="description" content="CRAZY MC — Minecraft server. Join Play.Crazy-MC.Fun for mini-games, prison, factions, crates and more!" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{
+      --accent:#ff6b6b;
+      --accent-2:#ffd166;
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#07101a);color:#e6eef6}
+    .container{max-width:1100px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:54px;height:54px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#061226}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    nav a.cta{background:var(--accent);padding:8px 12px;border-radius:10px;color:#061226;margin-left:14px}.hero{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px}
+.card{background:var(--card);padding:22px;border-radius:var(--radius);backdrop-filter:blur(6px);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+h1{margin:0 0 8px 0;font-size:34px}
+p.lead{color:var(--muted);margin:0 0 18px}
+ul.features{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;padding:0;list-style:none}
+ul.features li{background:var(--glass);padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600}
+
+.server-box{display:flex;flex-direction:column;gap:10px}
+.ip{font-size:20px;font-weight:700}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+.btn.play{background:linear-gradient(90deg,var(--accent),#ff8f6b);color:#061226}
+.btn.info{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.stat{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+.stat h3{margin:0;font-size:22px}
+.stat p{margin:6px 0 0;color:var(--muted)}
+
+footer{margin:28px 0 80px;color:var(--muted);font-size:14px}
+
+/* responsive */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .cards{grid-template-columns:1fr}
+  nav{display:none}
+  header{flex-direction:column;align-items:flex-start}
+}
+
+/* small helper */
+.center{display:flex;align-items:center;gap:8px}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">CM</div>
+        <div>
+          <strong style="font-size:18px">CRAZY MC</strong>
+          <div style="font-size:13px;color:var(--muted)">Play.Crazy-MC.Fun</div>
+        </div>
+      </div><nav>
+    <a href="#features">Features</a>
+    <a href="#store">Store</a>
+    <a href="#rules">Rules</a>
+    <a class="cta" href="#join">Join</a>
+  </nav>
+</header>
+
+<main class="hero">
+  <section class="card">
+    <h1>Welcome to <span style="color:var(--accent)">CRAZY MC</span></h1>
+    <p class="lead">Fast mini-games, factions, unique crates, custom kits and an active community. Join thousands of players on Play.Crazy-MC.Fun.</p>
+
+    <ul class="features">
+      <li>Mini-games</li>
+      <li>Custom Kits</li>
+      <li>Economy & Shops</li>
+      <li>Events & Tournaments</li>
+      <li>Active Staff</li>
+      <li>Discord Community</li>
+    </ul>
+
+    <div class="cards">
+      <div class="stat">
+        <h3>Daily Events</h3>
+        <p>Win crates and rare cosmetics</p>
+      </div>
+      <div class="stat">
+        <h3>Ranked Matches</h3>
+        <p>Prove your skill in arena</p>
+      </div>
+      <div class="stat">
+        <h3>Fast Support</h3>
+        <p>Report on Discord or in-game</p>
+      </div>
+    </div>
+
+    <section style="margin-top:18px">
+      <h3 id="rules">Simple Rules</h3>
+      <ol style="color:var(--muted)">
+        <li>No cheating or exploiting</li>
+        <li>Respect other players</li>
+        <li>No inappropriate names or builds</li>
+      </ol>
+    </section>
+  </section>
+
+  <aside class="card server-box">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:12px;color:var(--muted)">Server IP</div>
+        <div class="ip" id="serverIp">play.crazy-mc.fun</div>
+      </div>
+      <div class="center">
+        <a class="btn play" href="#join">Play Now</a>
+      </div>
+    </div>
+
+    <div style="border-radius:10px;padding:12px;background:rgba(255,255,255,0.02);margin-top:12px">
+      <div style="font-size:13px;color:var(--muted)">Status</div>
+      <div id="status" style="font-weight:700;margin-top:6px">Online — 1,234 players</div>
+    </div>
+
+    <div style="margin-top:12px;display:flex;gap:8px">
+      <a class="btn info" href="#store">Store</a>
+      <a class="btn info" href="https://discord.gg/" target="_blank">Discord</a>
+    </div>
+
+    <div style="margin-top:12px;color:var(--muted);font-size:13px">Latest YouTube</div>
+    <div style="margin-top:8px">
+      <!-- Replace the src below with your YouTube embed -->
+      <iframe width="100%" height="180" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" frameborder="0" allowfullscreen style="border-radius:10px"></iframe>
+    </div>
+
+  </aside>
+</main>
+
+<section class="card" style="margin-top:18px">
+  <h2>Server store & ranks</h2>
+  <p style="color:var(--muted)">Get exclusive perks, cosmetics and crates in our store. Payments supported: PayPal, bKash, Nagad (edit this list to match your payment options).</p>
+  <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+    <div class="stat">
+      <h3>VIP</h3>
+      <p>Perk: Rank prefix + mild perks</p>
+    </div>
+    <div class="stat">
+      <h3>Elite</h3>
+      <p>Perk: Extra kits + priority queue</p>
+    </div>
+    <div class="stat">
+      <h3>Legend</h3>
+      <p>Perk: Rare cosmetics + double crate chance</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div>© <strong>CRAZY MC</strong> — Play.Crazy-MC.Fun</div>
+    <div style="color:var(--muted)">Hosted in Bangladesh • Need help? Contact admin@crazy-mc.fun</div>
+  </div>
+</footer>
+
+  </div>  <script>
+    // ======= Simple live-ish status demo ======
+    // Replace with a real status API if you have one.
+    function randomPlayers(){
+      return Math.floor(400 + Math.random()*1800)
+    }
+    function updateStatus(){
+      const el = document.getElementById('status')
+      const players = randomPlayers()
+      el.textContent = `Online — ${players} players`
+    }
+    setInterval(updateStatus,5000)
+    updateStatus()
+
+    // Helpful: allow quick edit of server IP when developing
+    document.getElementById('serverIp').addEventListener('click', ()=>{
+      const ip = prompt('Change server IP (for local preview):', document.getElementById('serverIp').textContent)
+      if(ip) document.getElementById('serverIp').textContent = ip
+    })
+  </script></body>
+</html>
